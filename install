@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+install_config() {
+    local ESC=$'\x1b'
+
+    rm -rf ~/.config/nvim
+    rm -rf ~/.local/state/nvim
+    rm -rf ~/.local/share/nvim
+
+    ln -s $(pwd) ~/.config/nvim
+
+    echo "Follow the guide at https://nvchad.com/docs/quickstart/install"
+    echo "Run $ESC[1m$ESC[4m:MasonInstallAll$ESC[0m command after lazy.nvim finishes downloading plugins"
+    read -sr -n 1 -p "Press any key to continue"
+    nvim
+}
+
+read -sr -n 1 -p $'Do you wish to delete the nvim config and state files? [y/N]\n' yn
+case $yn in
+    [Yy]* ) install_config ;;
+    * ) echo "aborting";exit ;;
+esac

@@ -9,4 +9,4 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-map("n", "<Leader>mm", "<cmd> MarkdownPreviewToggle <cr>", { desc = "Toggle Markdown Preview" })
+map("n", "<Leader>mm", "<cmd> Markview toggle <cr>", { desc = "Toggle Markdown Preview" })

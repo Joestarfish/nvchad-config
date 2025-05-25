@@ -25,6 +25,7 @@ return {
         "typescript-language-server",
         "json-lsp",
         "bash-language-server",
+        "beautysh",
         "intelephense",
         "python-lsp-server",
       },
@@ -32,7 +33,7 @@ return {
   },
 
   -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+  { import = "nvchad.blink.lazyspec" },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -50,21 +51,17 @@ return {
         "python",
         "sql",
         "bash",
+        "markdown",
       },
     },
   },
 
-  -- Markdown Preview: https://github.com/iamcco/markdown-preview.nvim
-  -- install with yarn or npm
+  -- Markview: https://github.com/OXY2DEV/markview.nvim
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
+    "OXY2DEV/markview.nvim",
+    lazy = false,
   },
 
+  -- mini.nvim icons: https://github.com/echasnovski/mini.nvim
   { "echasnovski/mini.nvim", version = false },
 }
