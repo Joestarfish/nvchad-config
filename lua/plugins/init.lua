@@ -56,10 +56,17 @@ return {
     },
   },
 
-  -- Markview: https://github.com/OXY2DEV/markview.nvim
+  -- render-markdown.nvim: https://github.com/MeanderingProgrammer/render-markdown.nvim
   {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      anti_conceal = { enabled = false },
+      checkbox = { checked = { scope_highlight = '@markup.strikethrough' } },
+    },
+    ft = { "markdown" },
   },
 
   -- mini.nvim icons: https://github.com/echasnovski/mini.nvim
