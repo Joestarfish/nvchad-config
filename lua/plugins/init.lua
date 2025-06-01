@@ -71,4 +71,29 @@ return {
 
   -- mini.nvim icons: https://github.com/echasnovski/mini.nvim
   { "echasnovski/mini.nvim", version = false },
+
+  -- nvim-ufo for code folding: https://github.com/kevinhwang91/nvim-ufo
+  {
+    "kevinhwang91/nvim-ufo",
+    keys = {
+      { "zc", mode = "n", desc = "Fold current line" },
+      { "zo", mode = "n", desc = "Unfold current line" },
+      { "za", mode = "n", desc = "Toggle fold current line" },
+      { "zR", mode = "n", desc = "Unfold all lines" },
+    },
+    dependencies = "kevinhwang91/promise-async",
+    opts = {
+      provider_selector = function()
+        return { "lsp", "indent" }
+      end,
+    },
+    config = function(_, opts)
+      require("ufo").setup(opts)
+      vim.o.foldcolumn = "auto:9"
+      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+      vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+    end,
+  },
 }
