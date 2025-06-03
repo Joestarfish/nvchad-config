@@ -9,6 +9,7 @@ local servers = {
   "bashls",
   "intelephense",
   "pylsp",
+  "gopls",
 }
 vim.lsp.enable(servers)
 

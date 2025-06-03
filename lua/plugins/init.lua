@@ -28,6 +28,7 @@ return {
         "beautysh",
         "intelephense",
         "python-lsp-server",
+        "gopls",
       },
     },
   },
@@ -52,6 +53,7 @@ return {
         "sql",
         "bash",
         "markdown",
+        "go",
       },
     },
   },
@@ -64,7 +66,7 @@ return {
     ---@type render.md.UserConfig
     opts = {
       anti_conceal = { enabled = false },
-      checkbox = { checked = { scope_highlight = '@markup.strikethrough' } },
+      checkbox = { checked = { scope_highlight = "@markup.strikethrough" } },
     },
     ft = { "markdown" },
   },
